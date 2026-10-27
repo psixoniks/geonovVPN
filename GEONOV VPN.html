@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GEONOV VPN</title>
+<style>
+:root{color-scheme:dark;--bg:#000;--c:rgba(255,255,255,.05);--l:rgba(255,255,255,.14);--t:#fff;--m:#9a9a9a;--a:#fff;--b:#bdbdbd;box-sizing:border-box;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:inherit}
+body{margin:0;background:radial-gradient(900px 500px at 75% -10%,rgba(255,255,255,.09),transparent),radial-gradient(700px 500px at 0 35%,rgba(255,255,255,.05),transparent);background-color:var(--bg);color:var(--t);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(0,0,0,.9);z-index:10}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:10px 5%;background:rgba(0,0,0,.8);backdrop-filter:blur(14px);border-bottom:1px solid var(--l)}
+.lg{display:flex;align-items:center;gap:8px;font-weight:700;letter-spacing:.06em}
+nav{display:flex;gap:6px;align-items:center;flex-wrap:wrap}nav a{padding:6px 10px;color:var(--m);border-radius:8px}nav a:hover{color:var(--t)}
+main{max-width:1100px;margin:0 auto;padding:28px 5% 40px}
+.cd{background:var(--c);border:1px solid var(--l);border-radius:18px;padding:18px;backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.btn{display:inline-block;padding:11px 20px;border-radius:12px;border:1px solid rgba(255,255,255,.55);background:linear-gradient(135deg,rgba(255,255,255,.92),rgba(255,255,255,.6));color:#000;cursor:pointer;font:inherit;font-weight:600;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 6px 22px rgba(255,255,255,.12);transition:.2s}.btn,.btn:hover{color:#000}.btn:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 #fff,0 8px 28px rgba(255,255,255,.28)}.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn.p{background:linear-gradient(135deg,#fff,rgba(255,255,255,.78))}.btn.s{padding:7px 12px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0}
+.hero{text-align:center;padding:50px 0 24px}.hero h1{font-size:clamp(38px,9vw,76px);margin:12px 0;letter-spacing:.04em;background:linear-gradient(135deg,#fff,var(--a) 60%,var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sl{font-size:22px;margin:0}.mu{color:var(--m)}.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.tag{display:inline-block;font-size:12px;padding:3px 10px;border-radius:99px;border:1px solid var(--l);color:var(--m)}.tag.d{color:#fff;border-color:rgba(255,255,255,.4)}
+input,select{width:100%;padding:11px 12px;border-radius:12px;border:1px solid var(--l);background:rgba(255,255,255,.04);color:var(--t);font:inherit;margin:6px 0}
+.bar{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px}
+.pw{display:flex;flex-direction:column;align-items:center;gap:14px;padding:30px 0}
+.pb{width:170px;height:170px;border-radius:50%;border:2px solid var(--l);background:radial-gradient(circle,rgba(255,255,255,.18),rgba(0,0,0,.9));color:var(--t);font-size:46px;cursor:pointer;transition:.4s}
+.pb.ing{animation:pl 1s infinite;border-color:var(--a)}.pb.demo{border-color:var(--b);box-shadow:0 0 50px rgba(255,255,255,.4)}
+@keyframes pl{50%{box-shadow:0 0 60px rgba(255,255,255,.6);transform:scale(1.05)}}
+.cab{display:grid;grid-template-columns:220px 1fr;gap:16px}.cab aside{display:flex;flex-direction:column;gap:4px}
+.cab aside a{padding:9px 12px;border-radius:10px;color:var(--m);cursor:pointer}.cab aside a.on{background:var(--c);color:var(--t)}
+.note{border:1px dashed rgba(255,255,255,.35);color:#d0d0d0;border-radius:12px;padding:10px 14px;margin:12px 0;font-size:14px}
+footer{text-align:center;color:var(--m);padding:24px 5%;border-top:1px solid var(--l);font-size:14px}
+h2{margin:26px 0 8px}.pr{font-size:30px;font-weight:700}
+@media(max-width:700px){.cab{grid-template-columns:1fr}.cab aside{flex-direction:row;overflow-x:auto}.cab aside a{white-space:nowrap}.bar{grid-template-columns:1fr}}
+</style></head><body>
+<header><a class="lg" href="#home"><svg width="30" height="30" viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#9a9a9a"/></linearGradient></defs><path d="M16 2l11 4v9c0 7-5 12-11 15C10 27 5 22 5 15V6z" stroke="url(#g)" stroke-width="2"/><path d="M21 12.5a6 6 0 1 0 0 7V16h-5" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>GEONOV VPN</a>
+<nav><a href="#servers">Серверы</a><a href="#pricing">Тарифы</a><a href="#cabinet">Кабинет</a><a href="#admin">Админка</a><a class="btn s" href="#login">Войти</a><a class="btn s p" href="#register">Регистрация</a></nav></header>
+<main id="app"></main>
+<footer>© GEONOV VPN · <a href="#legal">Условия и конфиденциальность</a> · Telegram: <a id="ft" href="#" target="_blank" rel="noopener"></a></footer>
+<script>
+const CONFIG={tg:'oeyxeo',trialDays:4,plans:[{d:7,s:50},{d:30,s:150},{d:90,s:400},{d:365,s:1400}]};
+const REG={eu:'Европа',as:'Азия',na:'Северная Америка',sa:'Южная Америка',ot:'Другие регионы'};
+const SRV=[['Германия','Франкфурт','🇩🇪','eu'],['Франция','Париж','🇫🇷','eu'],['Нидерланды','Амстердам','🇳🇱','eu'],['Финляндия','Хельсинки','🇫🇮','eu'],['Польша','Варшава','🇵🇱','eu'],['Великобритания','Лондон','🇬🇧','eu'],['США','Нью-Йорк','🇺🇸','na'],['Канада','Торонто','🇨🇦','na'],['Япония','Токио','🇯🇵','as'],['Сингапур','Сингапур','🇸🇬','as'],['Турция','Стамбул','🇹🇷','as'],['Казахстан','Астана','🇰🇿','as']];
+const st={fav:new Set(),sel:null,conn:'off',t0:0,q:'',reg:'all',sort:'country',tab:'overview',paid:false};
+const $=s=>document.querySelector(s),app=$('#app');
+const tgl=()=>`https://t.me/${CONFIG.tg}`;
+function foot(){const f=$('#ft');f.href=tgl();f.textContent='@'+CONFIG.tg}
+const note=t=>`<div class="note">${t}</div>`;
+const DEMO='<span class="tag d">ДЕМО</span>';
+const NOAPI='Серверная часть не подключена: это демонстрационный интерфейс, данные не сохраняются.';
+const contact=()=>`<div class="cd" style="text-align:center;margin-top:28px"><h3>Есть вопросы? Свяжись со мной</h3><a class="btn p" href="${tgl()}" target="_blank" rel="noopener">Telegram @${CONFIG.tg}</a></div>`;
+
+function home(){return `<section class="hero"><span class="tag d">ДЕМО-ИНТЕРФЕЙС · backend не подключён</span><h1>GEONOV VPN</h1><p class="sl">«Твой интернет. Твои правила.»</p><p class="mu">Безопасное подключение, серверы по всему миру и удобное управление подпиской в одном месте.</p><div class="row"><a class="btn p" href="#connect">Подключить VPN</a><a class="btn" href="#servers">Выбрать сервер</a><a class="btn" href="#trial">Попробовать бесплатно</a></div></section>
+<div class="grid">${[['🌍','Серверы в разных странах'],['🛡️','Защита интернет-соединения'],['🎛️','Удобное управление подключением'],['⚡','Быстрое переключение между серверами'],['💬','Поддержка пользователей']].map(a=>`<div class="cd"><div style="font-size:28px">${a[0]}</div><b>${a[1]}</b></div>`).join('')}</div>${contact()}`}
+
+function cards(){const q=st.q.toLowerCase();let L=SRV.map((s,i)=>({s,i})).filter(o=>(st.reg==='all'||o.s[3]===st.reg)&&(o.s[0]+o.s[1]).toLowerCase().includes(q));
+if(st.sort==='country')L.sort((a,b)=>a.s[0].localeCompare(b.s[0],'ru'));
+return L.length?L.map(o=>`<div class="cd"><div style="display:flex;justify-content:space-between"><span style="font-size:30px">${o.s[2]}</span><span style="cursor:pointer;font-size:22px" onclick="fav(${o.i})">${st.fav.has(o.i)?'★':'☆'}</span></div><b>${o.s[0]}</b> <span class="mu">· ${o.s[1]}</span><div style="margin:8px 0">${DEMO} <span class="tag">статус: нет данных</span> <span class="tag">задержка: —</span> <span class="tag">нагрузка: —</span></div><button class="btn s p" onclick="pick(${o.i})">Подключиться</button></div>`).join(''):'<p class="mu">Серверов не найдено.</p>'}
+function servers(){return `<h2>Серверы</h2>${note('Тестовые серверы помечены «ДЕМО». Задержка, нагрузка и статус не показываются, пока не подключён API с реальными замерами. Сортировка по ним заработает после подключения.')}
+<div class="bar"><input placeholder="Поиск по стране или городу" oninput="st.q=this.value;$('#sl').innerHTML=cards()"><select onchange="st.reg=this.value;$('#sl').innerHTML=cards()"><option value="all">Все регионы</option>${Object.entries(REG).map(r=>`<option value="${r[0]}">${r[1]}</option>`).join('')}</select><select onchange="st.sort=this.value;$('#sl').innerHTML=cards()"><option value="country">По стране</option><option value="lat">По задержке</option><option value="av">По доступности</option></select></div><div class="grid" id="sl">${cards()}</div>`}
+function fav(i){st.fav.has(i)?st.fav.delete(i):st.fav.add(i);$('#sl').innerHTML=cards()}
+function pick(i){st.sel=i;st.conn='off';location.hash='connect';if(location.hash==='#connect')draw()}
+
+function connect(){const s=st.sel!==null?SRV[st.sel]:null,c=st.conn;
+return `<div class="pw"><button class="pb ${c==='ing'?'ing':c==='demo'?'demo':''}" onclick="tog()">⏻</button><h2 style="margin:0">${c==='off'?'Не подключено':c==='ing'?'Подключение…':'Демо-режим: туннель не создан'}</h2><div class="mu">${s?s[2]+' '+s[0]+', '+s[1]+' (ДЕМО)':'Сервер не выбран'}</div><div id="tm" class="pr">${c==='demo'?'00:00:00':'--:--:--'}</div><div class="row" style="margin:0"><a class="btn" href="#servers">Сменить сервер</a>${c!=='off'?'<button class="btn" onclick="tog()">Отключить</button>':''}</div></div>
+${note('Браузер не может создать системный VPN-туннель. Статус «Подключено» появится только при реальном соединении: через серверный API и клиент для Android/Windows. Сейчас это демонстрация анимации.')}`}
+function tog(){if(st.conn!=='off'){st.conn='off';return draw()}if(st.sel===null){location.hash='servers';return}st.conn='ing';draw();setTimeout(()=>{if(st.conn==='ing'){st.conn='demo';st.t0=Date.now();draw()}},1600)}
+setInterval(()=>{const e=$('#tm');if(e&&st.conn==='demo'){const n=Math.floor((Date.now()-st.t0)/1000),p=x=>String(x).padStart(2,'0');e.textContent=p(n/3600|0)+':'+p(n/60%60|0)+':'+p(n%60)}},500);
+
+function pricing(){return `<h2>Тарифы</h2>${note('Цены в звёздах — примеры, их задаёт администратор (см. CONFIG и раздел «Админка»).')}<div class="grid"><div class="cd"><b>Пробный период</b><div class="pr">${CONFIG.trialDays} дня</div><p class="mu">96 часов, один раз на пользователя. Срок проверяет сервер. Без автосписаний.</p><a class="btn p" href="#trial">Попробовать бесплатно</a></div>${CONFIG.plans.map(p=>`<div class="cd"><b>${p.d} дней</b><div class="pr">${p.s} ⭐</div><p class="mu">Оплата Telegram Stars (XTR). Продление после подтверждённой оплаты.</p><a class="btn p" href="#pay-${p.d}">Оплатить звёздами</a></div>`).join('')}</div>`}
+function pay(d){const p=CONFIG.plans.find(x=>x.d==d);if(!p)return pricing();return `<h2>Подтверждение заказа</h2><div class="cd" style="max-width:480px"><p>Подписка GEONOV VPN на <b>${p.d} дней</b></p><p class="pr">${p.s} ⭐ (XTR)</p><button class="btn p" onclick="st.paid=true;$('#ps').style.display='block'">Оплатить звёздами</button><a class="btn" href="#pricing">Назад</a></div><div id="ps" style="display:none">${note('Платёжный сервер и Telegram-бот не подключены. Счёт не создан, подписка не активирована. Нужны: BOT_TOKEN, вебхук, проверка successful_payment на сервере и защита от повторной обработки.')}</div>`}
+
+function auth(reg,trial){return `<h2>${reg?'Регистрация':'Вход'}</h2>${trial?note('После регистрации подтвердите активацию пробного периода: сервер включит доступ на 96 часов. Повторно активировать его выходом и входом нельзя.'):''}<form class="cd" style="max-width:440px" onsubmit="$('#fm').style.display='block';return false">${reg?'<input placeholder="Имя пользователя" required>':''}<input type="email" placeholder="Электронная почта" required><input type="password" placeholder="Пароль" required>${reg?'<label class="mu"><input type="checkbox" required style="width:auto"> Согласен с <a href="#legal" style="text-decoration:underline">условиями использования</a></label>':'<a class="mu" href="#login" onclick="$(\'#fm\').style.display=\'block\'">Забыли пароль?</a>'}<br><button class="btn p" style="width:100%;margin-top:10px">${reg?'Создать аккаунт':'Войти'}</button><button type="button" class="btn" style="width:100%;margin-top:8px" disabled>Через Telegram (после настройки бота)</button></form><div id="fm" style="display:none;max-width:440px">${note(NOAPI+' Аккаунт не создан, вход не выполнен.')}</div>`}
+
+const TABS=[['overview','Обзор аккаунта'],['connect','Подключение'],['servers','Список серверов'],['sub','Моя подписка'],['buy','Купить подписку'],['pays','История платежей'],['sec','Настройки безопасности'],['dev','Мои устройства'],['help','Помощь и поддержка']];
+function cabinet(){const t=st.tab;let b='';
+if(t==='overview')b=`<div class="grid"><div class="cd"><span class="mu">Статус аккаунта</span><br><b>Не авторизован</b></div><div class="cd"><span class="mu">Тариф</span><br><b>—</b></div><div class="cd"><span class="mu">Дата окончания</span><br><b>—</b></div><div class="cd"><span class="mu">Пробный период</span><br><b>Доступен: ${CONFIG.trialDays} дня</b></div></div><a class="btn p" href="#connect">Быстрое подключение</a>`;
+else if(t==='connect')b='<a class="btn p" href="#connect">Открыть панель подключения</a>';
+else if(t==='servers')b='<a class="btn p" href="#servers">Открыть каталог серверов</a>';
+else if(t==='buy')b='<a class="btn p" href="#pricing">Выбрать тариф</a>';
+else if(t==='help')b=`<p>Напишите нам в Telegram:</p><a class="btn p" href="${tgl()}" target="_blank" rel="noopener">@${CONFIG.tg}</a>`;
+else b=`<p class="mu">${{sub:'Активной подписки нет. Дата окончания и остаток дней придут с сервера.',pays:'Платежей пока нет. История появится после подтверждённых оплат.',sec:'Смена пароля и сессии станут доступны после подключения backend.',dev:'Список устройств появится после подключения backend.'}[t]}</p>`;
+return `<h2>Личный кабинет</h2>${note(NOAPI)}<div class="cab"><aside>${TABS.map(x=>`<a class="${x[0]===t?'on':''}" onclick="st.tab='${x[0]}';draw()">${x[1]}</a>`).join('')}</aside><div class="cd">${b}</div></div>`}
+
+function admin(){return `<h2>Админ-панель</h2>${note('Это макет. В рабочей версии доступ проверяется сервером (роль admin), пароли и ключи в браузере не хранятся. Изменения ниже живут только в этой вкладке.')}<div class="grid">${['Пользователи','Подписки','Платежи','Серверы','Страны и города','Обращения'].map(x=>`<div class="cd"><b>${x}</b><p class="mu">Данные придут с backend.</p></div>`).join('')}</div><div class="cd" style="max-width:480px"><b>Настройки</b><br><span class="mu">Telegram username (футер и блок контактов)</span><input value="${CONFIG.tg}" oninput="CONFIG.tg=this.value;foot()"><span class="mu">Пробный период, дней</span><input type="number" value="${CONFIG.trialDays}" oninput="CONFIG.trialDays=+this.value||0">${CONFIG.plans.map((p,i)=>`<span class="mu">Цена ${p.d} дн., ⭐</span><input type="number" value="${p.s}" oninput="CONFIG.plans[${i}].s=+this.value||0">`).join('')}</div>`}
+
+function legal(){return `<h2>Условия использования и конфиденциальность</h2>${note('Шаблон-заглушка: перед запуском текст должен проверить юрист и привести в соответствие с реальной работой сервиса.')}<div class="cd"><p>Сервис предоставляет доступ к VPN-серверам по подписке. Мы не заявляем гарантированной анонимности, отсутствия логов или конкретной скорости, пока это не реализовано и не подтверждено.</p><p>Оплата производится в Telegram Stars; подписка активируется после подтверждённой оплаты. Пробный период — один на пользователя.</p></div>`}
+
+function page(){const h=location.hash.slice(1)||'home';
+if(h.startsWith('pay-'))return pay(h.slice(4));
+return ({home,servers,connect,pricing,login:()=>auth(0),register:()=>auth(1),trial:()=>auth(1,1),cabinet,admin,legal}[h]||home)()}
+function draw(){app.innerHTML=page();foot()}
+addEventListener('hashchange',()=>{draw();scrollTo(0,0)});draw();
+</script></body></html>
